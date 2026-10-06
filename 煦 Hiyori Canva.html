@@ -1,0 +1,281 @@
+<!doctype html>
+<html lang="zh-Hant"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>煦 Hiyori 甜品工作坊</title>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;500;600;700&amp;family=Work+Sans:wght@400;500;600&amp;display=swap" rel="stylesheet">
+  <style>
+    :root{--cream:#F8F3E9;--paper:#FFFCF6;--brown:#755443;--sage:#899B83;--dark:#37291F;--line:#D9CCBA}
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;scroll-padding-top:105px}
+    body{margin:0;width:100%;color:var(--dark);font-family:"Noto Serif TC",serif}
+    a,button{transition:background .2s,color .2s,transform .2s}
+    a:focus-visible,button:focus-visible{outline:3px solid var(--brown);outline-offset:4px}
+    .site-head{background:rgba(248,243,233,.97);backdrop-filter:blur(15px);border-bottom:1px solid var(--line)}
+    .shell{width:min(calc(100% - 40px),1180px);margin-inline:auto}
+    .wordmark{font-weight:700;letter-spacing:.035em;line-height:1.4}
+    .nav-link{font-size:13px;white-space:nowrap}
+    .nav-link:hover,.footer-link:hover{color:#314F38;text-decoration:underline;text-underline-offset:5px}
+    .eyebrow{font-family:"Work Sans","Noto Serif TC",sans-serif;letter-spacing:.16em;font-size:12px;font-weight:600}
+    .display{font-size:clamp(43px,5.8vw,80px);line-height:1.35;letter-spacing:-.055em}
+    .section-title{font-size:clamp(32px,3.8vw,52px);line-height:1.4;letter-spacing:-.035em}
+    .body-copy{line-height:2;letter-spacing:.015em}
+    .section-space{padding-block:clamp(74px,9vw,125px)}
+    .hero{display:grid;grid-template-columns:1.03fr .97fr;gap:7%;align-items:center;padding-block:85px 105px}
+    .hero-photo-wrap{position:relative;min-height:500px;box-shadow:20px 20px 0 #E5DCCD}
+    .hero-photo-wrap img{width:100%;height:100%;position:absolute;inset:0;object-fit:cover}
+    .hero-photo-wrap:after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(37,25,15,.28),transparent 45%);pointer-events:none}
+    .photo-caption{position:absolute;z-index:1;left:24px;bottom:20px;color:white;font-size:12px;letter-spacing:.1em}
+    .solid-btn,.outline-btn{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:12px 23px;border:1px solid var(--brown);text-align:center;font-size:14px}
+    .solid-btn:hover{background:#513929!important;transform:translateY(-2px)}
+    .outline-btn:hover{background:#E9E0D2;transform:translateY(-2px)}
+    .picture-card{background:var(--paper);border:1px solid var(--line);overflow:hidden}
+    .picture-card img{width:100%;height:clamp(260px,30vw,390px);object-fit:cover}
+    .picture-card-content{padding:26px}
+    .quiet-card{border:1px solid var(--line);background:var(--paper);padding:clamp(24px,3vw,38px)}
+    .placeholder-art{height:150px;margin-bottom:27px;background:linear-gradient(135deg,#E9E0D0,#D7DDCD 55%,#BDAA93);position:relative;overflow:hidden}
+    .placeholder-art:after{content:"";position:absolute;width:145px;height:145px;border:17px solid rgba(255,255,255,.45);border-radius:50%;right:-25px;top:-50px}
+    .placeholder-art.two{background:linear-gradient(135deg,#D7DDCD,#EEE6D7,#B9A18A)}
+    .placeholder-art.three{background:linear-gradient(135deg,#D7BDA1,#EFE7D7,#A5B09B)}
+    .disabled-control{width:100%;min-height:48px;border:1px solid #C7BBAA;background:#F0EAE0;padding:10px 14px;color:#57493D;opacity:1;cursor:not-allowed}
+    textarea.disabled-control{min-height:120px}
+    .menu-panel{display:none}
+    .menu-panel.open{display:flex}
+    @media(max-width:1199px){
+      .desktop-nav{display:none!important}
+      .menu-panel{position:absolute;top:100%;left:0;right:0;flex-direction:column;gap:0;background:var(--cream);border-bottom:1px solid var(--line);box-shadow:0 18px 30px #37291f1a;max-height:calc(80 * min(var(--vh, 1vh), 1vh));overflow:auto}
+      .menu-panel a{padding:12px 25px;border-top:1px solid var(--line)}
+    }
+    @media(min-width:1200px){.mobile-toggle{display:none!important}}
+    @media(max-width:800px){.hero{grid-template-columns:1fr;gap:42px;padding-block:65px 86px}.hero-photo-wrap{min-height:390px}}
+    @media(max-width:500px){.shell{width:calc(100% - 32px)}.hero-photo-wrap{min-height:310px;box-shadow:10px 10px 0 #E5DCCD}.section-space{padding-block:70px}.wordmark{font-size:17px}}
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition-duration:.01ms!important}}
+  </style>
+  
+  <script src="https://cdn.tailwindcss.com/3.4.17" type="text/javascript"></script>
+  
+  
+  
+ </head>
+ <body data-template-id="__page-root" class="w-full" style="background: rgb(248, 243, 233);">
+  <header data-template-id="site-header" class="canva-header site-head sticky top-0 z-50 w-full" style="background: rgb(248, 243, 233);">
+   <div class="shell min-h-[78px] flex items-center justify-between gap-4"><a data-template-id="header-brand" class="canva-link wordmark" href="#home" style="color: rgb(117, 84, 67); font-weight: 700;">煦 Hiyori 甜品工作坊</a>
+    <nav class="desktop-nav flex items-center gap-4" aria-label="主要導覽"><a data-template-id="nav-home" class="canva-link nav-link" href="#home" style="color: rgb(55, 41, 31);">首頁</a> <a data-template-id="nav-products" class="canva-link nav-link" href="#products" style="color: rgb(55, 41, 31);">甜品選品</a> <a data-template-id="nav-about" class="canva-link nav-link" href="#about" style="color: rgb(55, 41, 31);">關於 Serena</a> <a data-template-id="nav-services" class="canva-link nav-link" href="#services" style="color: rgb(55, 41, 31);">服務與合作</a> <a data-template-id="nav-work" class="canva-link nav-link" href="#work" style="color: rgb(55, 41, 31);">作品集</a> <a data-template-id="nav-journal" class="canva-link nav-link" href="#journal" style="color: rgb(55, 41, 31);">甜品日誌</a> <a data-template-id="nav-instagram" class="canva-link nav-link" href="#instagram" style="color: rgb(55, 41, 31);">Instagram</a> <a data-template-id="nav-line" class="canva-link nav-link" href="#line" style="color: rgb(55, 41, 31);">LINE</a> <a data-template-id="nav-contact" class="canva-link nav-link" href="#contact" style="color: rgb(55, 41, 31);">聯絡我</a>
+    </nav><button id="menu-toggle" class="mobile-toggle inline-flex items-center justify-center w-12 h-12 border border-[#755443] shrink-0" type="button" aria-label="開啟導覽選單" aria-expanded="false" aria-controls="mobile-menu"><span aria-hidden="true" class="text-2xl">☰</span></button>
+   </div>
+   <nav id="mobile-menu" class="menu-panel" aria-label="手機導覽"><a href="#home">首頁</a><a href="#products">甜品選品</a><a href="#about">關於 Serena</a><a href="#services">服務與合作</a><a href="#work">作品集</a><a href="#journal">甜品日誌</a><a href="#instagram">Instagram｜帳號待補</a><a href="#line">LINE｜帳號待補</a><a href="#contact">聯絡我</a>
+   </nav>
+  </header>
+  <main>
+   <section id="home" class="shell hero" aria-labelledby="hero-title">
+    <div>
+     <p data-template-id="hero-kicker" class="canva-text eyebrow mb-6" style="color: rgb(117, 84, 67);">煦 Hiyori 甜品工作坊 · 手作甜品</p>
+     <h1 id="hero-title" data-template-id="hero-title" class="canva-text display font-semibold mb-7" style="color: rgb(55, 41, 31); font-weight: 600;">一口甜，讓日常暖一點。</h1>
+     <p data-template-id="hero-subtitle" class="canva-text body-copy max-w-[590px] mb-9" style="color: rgb(55, 41, 31);">以細緻手藝與真誠用心，讓每一份甜品，成為值得品嚐與分享的日常。</p>
+     <div class="flex flex-wrap gap-3"><a data-template-id="hero-products-button" class="canva-button solid-btn" href="#products" style="background: rgb(117, 84, 67); color: rgb(255, 255, 255); font-weight: 600;">探索甜品</a> <a data-template-id="hero-contact-button" class="canva-button outline-btn" href="#contact" style="background: rgb(248, 243, 233); color: rgb(117, 84, 67); font-weight: 600;">訂購與合作詢問</a>
+     </div>
+    </div>
+    <div class="hero-photo-wrap"><img data-template-id="hero-image" class="canva-image" loading="lazy" src="https://images.pexels.com/photos/12800606/pexels-photo-12800606.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=1280" alt="自然光氛圍中的甜品與烘焙點心展示"> <span data-template-id="hero-image-caption" class="canva-text photo-caption" style="color: rgb(255, 255, 255);">手作甜品的日常風景 · 情境示意</span>
+    </div>
+   </section>
+   <section id="products" data-template-id="products-section" class="canva-section section-space w-full" aria-labelledby="products-title" style="background: rgb(238, 232, 220);">
+    <div class="shell">
+     <p data-template-id="products-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">SWEET SELECTION · 展示分類待確認</p>
+     <h2 id="products-title" data-template-id="products-title" class="canva-text section-title font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600;">甜品選品</h2>
+     <p data-template-id="products-intro" class="canva-text body-copy mb-10" style="color: rgb(55, 41, 31);">以下為待確認的展示分類，圖片僅供視覺示意，並非現售品項。</p>
+     <div class="grid md:grid-cols-3 gap-5">
+      <article data-template-id="product-card-1" class="canva-card picture-card" style="background: rgb(255, 252, 246);"><img data-template-id="product-image-1" class="canva-image" loading="lazy" src="https://images.pexels.com/photos/12811281/pexels-photo-12811281.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="籃中手作餅乾的展示情境示意">
+       <div class="picture-card-content">
+        <h3 data-template-id="product-title-1" class="canva-text text-[23px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 23px;">烘焙甜點</h3>
+        <p data-template-id="product-note-1" class="canva-text body-copy" style="color: rgb(117, 84, 67);">產品示意，實際品項待補</p>
+       </div>
+      </article>
+      <article data-template-id="product-card-2" class="canva-card picture-card" style="background: rgb(255, 252, 246);"><img data-template-id="product-image-2" class="canva-image" loading="lazy" src="https://images.pexels.com/photos/7180271/pexels-photo-7180271.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="繫有緞帶的杯子蛋糕禮盒展示情境示意">
+       <div class="picture-card-content">
+        <h3 data-template-id="product-title-2" class="canva-text text-[23px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 23px;">分享禮盒</h3>
+        <p data-template-id="product-note-2" class="canva-text body-copy" style="color: rgb(117, 84, 67);">產品示意，實際品項待補</p>
+       </div>
+      </article>
+      <article data-template-id="product-card-3" class="canva-card picture-card" style="background: rgb(255, 252, 246);"><img data-template-id="product-image-3" class="canva-image" loading="lazy" src="https://images.pexels.com/photos/12931391/pexels-photo-12931391.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="柔和光線下的藍莓塔展示情境示意">
+       <div class="picture-card-content">
+        <h3 data-template-id="product-title-3" class="canva-text text-[23px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 23px;">季節靈感</h3>
+        <p data-template-id="product-note-3" class="canva-text body-copy" style="color: rgb(117, 84, 67);">產品示意，實際品項待補</p>
+       </div>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="about" class="section-space w-full" aria-labelledby="about-title">
+    <div class="shell grid lg:grid-cols-[.85fr_1.15fr] gap-12 lg:gap-20 items-start">
+     <div>
+      <p data-template-id="about-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">THE HANDS BEHIND HIYORI</p>
+      <h2 id="about-title" data-template-id="about-title" class="canva-text section-title font-semibold mb-8" style="color: rgb(55, 41, 31); font-weight: 600;">關於 Serena</h2><img data-template-id="about-image" class="canva-image w-full h-[300px] md:h-[420px] object-cover" loading="lazy" src="https://images.pexels.com/photos/33593117/pexels-photo-33593117.jpeg?auto=compress&amp;cs=tinysrgb&amp;w=800" alt="烘焙者以雙手揉製麵團的製作過程，非 Serena 肖像">
+      <p data-template-id="about-image-note" class="canva-text text-sm mt-3" style="color: rgb(117, 84, 67); font-size: 14px;">烘焙製作情境示意，非創辦人肖像。</p>
+     </div>
+     <div class="lg:pt-12">
+      <p data-template-id="about-description" class="canva-text body-copy mb-10" style="color: rgb(55, 41, 31);">我是 Serena，煦 Hiyori 甜品工作坊創辦人，累積 15 年跨領域工作與教學經驗。從料理教學、烘焙實務到甜品創作，我重視細節與品質，尊重食材特性，並以清楚、穩定的流程完成每一份作品。</p>
+      <div class="grid sm:grid-cols-2 gap-9">
+       <div class="border-t border-[#D9CCBA] pt-5">
+        <h3 data-template-id="experience-heading" class="canva-text font-semibold mb-4" style="color: rgb(117, 84, 67); font-weight: 600;">相關經歷</h3>
+        <ul class="space-y-3 body-copy">
+         <li data-template-id="experience-1" class="canva-text" style="color: rgb(55, 41, 31);">食育工作室與 ABC Cooking 料理講師</li>
+         <li data-template-id="experience-2" class="canva-text" style="color: rgb(55, 41, 31);">萊爾富中央廚房烘焙部及複合式麵包坊</li>
+         <li data-template-id="experience-3" class="canva-text" style="color: rgb(55, 41, 31);">料理教師助教經歷</li>
+        </ul>
+       </div>
+       <div class="border-t border-[#D9CCBA] pt-5">
+        <h3 data-template-id="cert-heading" class="canva-text font-semibold mb-4" style="color: rgb(117, 84, 67); font-weight: 600;">丙級技術士證</h3>
+        <ul class="space-y-3 body-copy">
+         <li data-template-id="cert-1" class="canva-text" style="color: rgb(55, 41, 31);">中餐烹調丙級技術士證</li>
+         <li data-template-id="cert-2" class="canva-text" style="color: rgb(55, 41, 31);">烘焙食品丙級技術士證</li>
+         <li data-template-id="cert-3" class="canva-text" style="color: rgb(55, 41, 31);">飲料調製丙級技術士證</li>
+        </ul>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section>
+   <section id="services" data-template-id="services-section" class="canva-section section-space w-full" aria-labelledby="services-title" style="background: rgb(231, 235, 221);">
+    <div class="shell">
+     <p data-template-id="services-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">LET'S TALK · 可洽詢方向</p>
+     <h2 id="services-title" data-template-id="services-title" class="canva-text section-title font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600;">服務與合作</h2>
+     <p data-template-id="services-intro" class="canva-text body-copy mb-10" style="color: rgb(55, 41, 31);">以下為可討論的方向，實際內容與安排均待進一步確認。</p>
+     <div class="grid md:grid-cols-3 gap-5">
+      <article data-template-id="service-card-1" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <span aria-hidden="true" class="eyebrow">01 /</span>
+       <h3 data-template-id="service-title-1" class="canva-text text-[22px] font-semibold mt-7" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">甜品需求諮詢</h3>
+      </article>
+      <article data-template-id="service-card-2" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <span aria-hidden="true" class="eyebrow">02 /</span>
+       <h3 data-template-id="service-title-2" class="canva-text text-[22px] font-semibold mt-7" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">送禮與活動合作洽詢</h3>
+      </article>
+      <article data-template-id="service-card-3" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <span aria-hidden="true" class="eyebrow">03 /</span>
+       <h3 data-template-id="service-title-3" class="canva-text text-[22px] font-semibold mt-7" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">料理與烘焙教學洽詢</h3>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="work" class="section-space w-full" aria-labelledby="work-title">
+    <div class="shell">
+     <p data-template-id="work-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">PORTFOLIO · 預留版位</p>
+     <h2 id="work-title" data-template-id="work-title" class="canva-text section-title font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600;">作品集</h2>
+     <p data-template-id="work-intro" class="canva-text body-copy mb-10" style="color: rgb(55, 41, 31);">示意版位，實際作品待補。以下分類不代表已公開的案例。</p>
+     <div class="grid md:grid-cols-3 gap-5">
+      <article data-template-id="work-card-1" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <div class="placeholder-art" aria-hidden="true"></div>
+       <h3 data-template-id="work-title-1" class="canva-text text-[22px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">甜品製作</h3>
+       <p data-template-id="work-note-1" class="canva-text body-copy" style="color: rgb(117, 84, 67);">示意版位，實際作品待補</p>
+      </article>
+      <article data-template-id="work-card-2" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <div class="placeholder-art two" aria-hidden="true"></div>
+       <h3 data-template-id="work-title-2" class="canva-text text-[22px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">課程分享</h3>
+       <p data-template-id="work-note-2" class="canva-text body-copy" style="color: rgb(117, 84, 67);">示意版位，實際作品待補</p>
+      </article>
+      <article data-template-id="work-card-3" class="canva-card quiet-card" style="background: rgb(255, 252, 246);">
+       <div class="placeholder-art three" aria-hidden="true"></div>
+       <h3 data-template-id="work-title-3" class="canva-text text-[22px] font-semibold mb-3" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">品牌創作</h3>
+       <p data-template-id="work-note-3" class="canva-text body-copy" style="color: rgb(117, 84, 67);">示意版位，實際作品待補</p>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section id="journal" data-template-id="journal-section" class="canva-section section-space w-full" aria-labelledby="journal-title" style="background: rgb(238, 232, 220);">
+    <div class="shell">
+     <p data-template-id="journal-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">SWEET NOTES · 主題預告</p>
+     <h2 id="journal-title" data-template-id="journal-title" class="canva-text section-title font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600;">甜品日誌</h2>
+     <p data-template-id="journal-intro" class="canva-text body-copy mb-10" style="color: rgb(55, 41, 31);">以下僅為主題預告，文章內容待補。</p>
+     <div class="grid md:grid-cols-3 gap-5">
+      <article data-template-id="journal-card-1" class="canva-card quiet-card min-h-[210px] flex flex-col justify-between gap-8" style="background: rgb(255, 252, 246);">
+       <span data-template-id="journal-tag-1" class="canva-tag eyebrow" style="color: rgb(117, 84, 67);">主題預告 · 內容待補</span>
+       <h3 data-template-id="journal-title-1" class="canva-text text-[22px] leading-relaxed font-semibold" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">從食材開始的甜品靈感</h3>
+      </article>
+      <article data-template-id="journal-card-2" class="canva-card quiet-card min-h-[210px] flex flex-col justify-between gap-8" style="background: rgb(255, 252, 246);">
+       <span data-template-id="journal-tag-2" class="canva-tag eyebrow" style="color: rgb(117, 84, 67);">主題預告 · 內容待補</span>
+       <h3 data-template-id="journal-title-2" class="canva-text text-[22px] leading-relaxed font-semibold" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">烘焙步驟裡的小細節</h3>
+      </article>
+      <article data-template-id="journal-card-3" class="canva-card quiet-card min-h-[210px] flex flex-col justify-between gap-8" style="background: rgb(255, 252, 246);">
+       <span data-template-id="journal-tag-3" class="canva-tag eyebrow" style="color: rgb(117, 84, 67);">主題預告 · 內容待補</span>
+       <h3 data-template-id="journal-title-3" class="canva-text text-[22px] leading-relaxed font-semibold" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 22px;">把手作的溫暖分享出去</h3>
+      </article>
+     </div>
+    </div>
+   </section>
+   <section class="section-space w-full" aria-label="社群帳號狀態">
+    <div class="shell grid md:grid-cols-2 gap-5">
+     <article id="instagram" data-template-id="instagram-panel" class="canva-panel quiet-card" style="background: rgb(255, 252, 246);">
+      <h2 data-template-id="instagram-title" class="canva-text text-[24px] font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 24px;">Instagram｜帳號待補</h2>
+      <p data-template-id="instagram-note" class="canva-text body-copy" style="color: rgb(117, 84, 67);">目前尚未提供帳號連結。</p>
+     </article>
+     <article id="line" data-template-id="line-panel" class="canva-panel quiet-card" style="background: rgb(255, 252, 246);">
+      <h2 data-template-id="line-title" class="canva-text text-[24px] font-semibold mb-4" style="color: rgb(55, 41, 31); font-weight: 600; font-size: 24px;">LINE｜帳號待補</h2>
+      <p data-template-id="line-note" class="canva-text body-copy" style="color: rgb(117, 84, 67);">目前尚未提供帳號連結。</p>
+     </article>
+    </div>
+   </section>
+   <section id="contact" data-template-id="contact-section" class="canva-section section-space w-full" aria-labelledby="contact-title" style="background: rgb(231, 235, 221);">
+    <div class="shell grid lg:grid-cols-2 gap-12 lg:gap-20">
+     <div>
+      <p data-template-id="contact-kicker" class="canva-text eyebrow mb-4" style="color: rgb(117, 84, 67);">GET IN TOUCH · 聯絡我</p>
+      <h2 id="contact-title" data-template-id="contact-title" class="canva-text section-title font-semibold mb-8" style="color: rgb(55, 41, 31); font-weight: 600;">讓甜品，陪你分享心意。</h2>
+      <p data-template-id="contact-directions-heading" class="canva-text font-semibold mb-5" style="color: rgb(55, 41, 31); font-weight: 600;">詢問分類</p>
+      <ul class="space-y-3 body-copy">
+       <li data-template-id="contact-direction-1" class="canva-text" style="color: rgb(55, 41, 31);">甜品詢問</li>
+       <li data-template-id="contact-direction-2" class="canva-text" style="color: rgb(55, 41, 31);">送禮與活動</li>
+       <li data-template-id="contact-direction-3" class="canva-text" style="color: rgb(55, 41, 31);">課程與品牌合作</li>
+      </ul>
+     </div>
+     <div data-template-id="form-panel" class="canva-panel quiet-card" style="background: rgb(255, 252, 246);">
+      <p data-template-id="form-notice" class="canva-text body-copy font-semibold mb-7" style="color: rgb(117, 84, 67); font-weight: 600;">表單尚未串接，暫停送出。以下欄位僅供版面展示。</p>
+      <form id="contact-form" class="grid sm:grid-cols-2 gap-5" aria-describedby="form-status">
+       <div>
+        <label data-template-id="name-label" class="canva-text block mb-2" for="contact-name" style="color: rgb(55, 41, 31);">姓名</label><input id="contact-name" class="disabled-control" type="text" disabled="">
+       </div>
+       <div>
+        <label data-template-id="email-label" class="canva-text block mb-2" for="contact-email" style="color: rgb(55, 41, 31);">電子郵件</label><input id="contact-email" class="disabled-control" type="email" disabled="">
+       </div>
+       <div class="sm:col-span-2"><label data-template-id="type-label" class="canva-text block mb-2" for="contact-type" style="color: rgb(55, 41, 31);">詢問分類</label> <select id="contact-type" class="disabled-control" disabled=""> <option data-template-id="type-option-default">請選擇詢問分類</option> <option data-template-id="type-option-1">甜品詢問</option> <option data-template-id="type-option-2">送禮與活動</option> <option data-template-id="type-option-3">課程與品牌合作</option> </select>
+       </div>
+       <div class="sm:col-span-2">
+        <label data-template-id="message-label" class="canva-text block mb-2" for="contact-message" style="color: rgb(55, 41, 31);">需求說明</label><textarea id="contact-message" class="disabled-control" disabled=""></textarea>
+       </div>
+       <div class="sm:col-span-2">
+        <p id="form-status" data-template-id="form-status" class="canva-text text-sm mb-4" style="color: rgb(117, 84, 67); font-size: 14px;">目前無法透過本頁提交詢問。</p><button data-template-id="form-disabled-button" class="canva-button solid-btn opacity-60 cursor-not-allowed" type="submit" disabled="" style="background: rgb(117, 84, 67); color: rgb(255, 255, 255);">表單尚未串接，暫停送出</button>
+       </div>
+      </form>
+     </div>
+    </div>
+   </section>
+  </main>
+  <footer data-template-id="footer-section" class="canva-footer w-full pt-14 pb-8" style="background: rgb(117, 84, 67);">
+   <div class="shell flex flex-col sm:flex-row justify-between gap-8 items-start sm:items-end">
+    <div>
+     <p data-template-id="footer-brand" class="canva-text text-[22px] font-semibold mb-3" style="color: rgb(255, 255, 255); font-weight: 600; font-size: 22px;">煦 Hiyori 甜品工作坊</p>
+     <p data-template-id="footer-tagline" class="canva-text" style="color: rgb(255, 255, 255);">一口甜，讓日常暖一點。</p>
+    </div><a data-template-id="back-to-top" class="canva-link footer-link border-b border-current pb-1" href="#home" style="color: rgb(255, 255, 255);">返回頂端 ↑</a>
+   </div>
+  </footer>
+  <script>
+    const menuButton = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    function closeMenu() {
+      mobileMenu.classList.remove('open');
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', '開啟導覽選單');
+    }
+    menuButton.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      menuButton.setAttribute('aria-expanded', String(open));
+      menuButton.setAttribute('aria-label', open ? '關閉導覽選單' : '開啟導覽選單');
+    });
+    mobileMenu.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        closeMenu();
+        menuButton.focus();
+      }
+    });
+    document.getElementById('contact-form').addEventListener('submit', event => event.preventDefault());
+  </script>
+ 
+</body></html>
